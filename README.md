@@ -1,16 +1,8 @@
-# shopping_list
+# TUGAS 6
+##  Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
+- Stateless widget adalah widget yang tidak memiliki data atau status internal yang berubah. Mereka digunakan ketika komponen hanya perlu merender tampilan yang tidak akan berubah seiring waktu atau berdasarkan input eksternal. Stateless widget merender tampilan dengan cara yang tidak mempertahankan atau memperbarui status internal. Ini berarti ketika ada perubahan yang mempengaruhi widget ini, Anda harus membuat widget baru untuk menggantikannya. Contoh: Text, Icon, Image.
+- Stateful widget adalah widget yang memiliki data atau status internal yang dapat berubah selama masa hidup widget tersebut. Mereka digunakan ketika Anda perlu mengelola perubahan tampilan berdasarkan perubahan data atau input pengguna. Stateful widget memiliki dua bagian utama: widget (yang bersifat stateless) dan objek State terkait yang mengelola status internal. Ketika status berubah, State akan membangun ulang widget untuk merefleksikan perubahan tersebut. Contoh: TextField, Checkbox, Slider.
 
-A new Flutter project.
 
-## Getting Started
+## Sebutkan seluruh widget yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
