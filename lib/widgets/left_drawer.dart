@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/screens/menu.dart';
+// TODO: Impor halaman ShopFormPage jika sudah dibuat
 import 'package:shopping_list/screens/shoplist_form.dart';
+import 'package:shopping_list/screens/list_product.dart';
+
+
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -10,64 +14,71 @@ class LeftDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          const DrawerHeader(
             // TODO: Bagian drawer header
+          const DrawerHeader(
             decoration: BoxDecoration(
-            color: Colors.indigo,
-          ),
-          child: Column(
-            children: [
-              Text(
-                'Shopping List',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              Padding(padding: EdgeInsets.all(10)),
-              Text("Catat seluruh keperluan belanjamu di sini!",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15, // Mengganti ukuran font menjadi 15
-                      fontWeight: FontWeight.normal, // Menggunakan weight biasa (normal)
-                      color: Colors.white,
-                    ),
-                      // TODO: Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
+              color: Colors.indigo,
+            ),
+            child: Column(
+              children: [
+                Text(
+                  'Shopping List',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
-            ],
-          ),
+                ),
+                Padding(padding: EdgeInsets.all(10)),
+                Text(
+                  "Catat seluruh keperluan belanjamu di sini!",
+                  textAlign: TextAlign.center, // Center alignment
+                  style: TextStyle(
+                    fontSize: 15, // Font size 15
+                    color: Colors.white, // White text color
+                    fontWeight: FontWeight.normal, // Normal font weight
+                  ),
+                ),
+              ],
+            ),
           ),
           // TODO: Bagian routing
-          ListTile(
+            ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Halaman Utama'),
             // Bagian redirection ke MyHomePage
             onTap: () {
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
                     builder: (context) => MyHomePage(),
-                  ));
+                    ));
             },
-          ),
-          ListTile(
-            leading: const Icon(Icons.add_shopping_cart),
-            title: const Text('Tambah Produk'),
-            // Bagian redirection ke ShopFormPage
-            onTap: () {
-              Navigator.pushReplacement(
+            ),
+            ListTile(
+              leading: const Icon(Icons.add_shopping_cart),
+              title: const Text('Tambah Produk'),
+              // Bagian redirection ke ShopFormPage
+              onTap: () {
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => ShopFormPage(),
-                  ));
-
-              /*
-              TODO: Buatlah routing ke ShopFormPage di sini,
-              setelah halaman ShopFormPage sudah dibuat.
-              */
-            },
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shopping_basket),
+              title: const Text('Daftar Produk'),
+              onTap: () {
+                  // Route menu ke halaman produk
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProductPage()),
+                  );
+              },
           ),
         ],
       ),
